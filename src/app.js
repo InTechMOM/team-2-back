@@ -3,22 +3,22 @@ import { port } from './config/index.js';
 import mongoose from "mongoose"; 
 import  { mongo_uri } from './config/index.js';
 
+mongoose.connect(mongo_uri);
+const database=mongoose.connection;
 
+database.on('error',(error=>{
+  console.log(error);
+}))
+
+database.once('connected',()=>{
+  console.log('Database Connected');
+})
 
 const app = express();
 
 app.get('/', (request, response, error) => {
   response.send('Status: OK')
 })
-
-//Conexion a la base de Datos
-
-mongoose.connect(mongo_uri) 
-.then(() => console.log("DB Connected")) 
-.catch((error) => console.error(error));
-
-
-
 
 
 app.listen(port, (error)=> {
