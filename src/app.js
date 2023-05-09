@@ -5,7 +5,7 @@ import  { mongo_uri } from './config/index.js';
 import morgan from 'morgan';
 import  router  from './routes/index.js';
 import bodyParser from 'body-parser';
-//import errorHandler from './Middleware/errorHandlerPOST.js'
+import errorHandler from './Middleware/errorHandlerPOST.js'
 
 
 //Conexion Mongoose
@@ -30,6 +30,8 @@ app.use(express.json());
 
 //Routes
 app.use('/users',router);
+//Midleware para manejar errores 500
+app.use(errorHandler);
 
 app.listen(port, (error)=> {
   if (error) {
