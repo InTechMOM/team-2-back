@@ -16,5 +16,5 @@ const validateUser=(request, response, next)=>{
   }
   next();
 }
-//module.exports=validateUser;
+
 export default validateUser;
