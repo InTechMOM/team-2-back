@@ -12,5 +12,5 @@ const createUser=async(request,response,next)=>{
     next(error);
   }
 };
-//module.exports={createUser};
+
 export default createUser;
