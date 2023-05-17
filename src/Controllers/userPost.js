@@ -7,7 +7,10 @@ const createUser=async(request,response,next)=>{
     const user=new User ({name,lastName,email,rol,creationDate});
     
     await user.save();
-    response.status(200).json({message:'User create successfully'});
+    response.status(200).json({
+      message:'User create successfully',
+      data:user
+    });
 
   } catch (error) {
     next(error);

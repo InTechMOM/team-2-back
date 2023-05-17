@@ -1,13 +1,16 @@
 
 import User from '../Models/User.js';
 
-const getUserById=async(request, response,next)=>{
+const getUserByEmail=async(request, response,next)=>{
   try {
-    const user=await User.findById(request.params.id);
+    const {email}=request.query;
+    const user=await User.findOne({email});
   if (!user) {
     return response.status(404).send('User not found');
-  } 
-    return response.send(user);
+  } if (!email) {
+    return response.status(400).send('Email are required');
+  }
+    return response.status(200).json(user);
   
     
   } catch (error) {
@@ -15,4 +18,4 @@ const getUserById=async(request, response,next)=>{
   }
   
 }
-export default getUserById;
+export default getUserByEmail;

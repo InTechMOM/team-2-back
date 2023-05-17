@@ -4,7 +4,7 @@ import Joi from 'joi';
 const validateUser=(request, response, next)=>{
   const userSchema=Joi.object({
     name: Joi.string().required(),
-    lastname: Joi.string().required(),
+    lastName: Joi.string().required(),
     email: Joi.string().email().required(),
     rol:Joi.string().valid('student','teacher').required(),
   });
