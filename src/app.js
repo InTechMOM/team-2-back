@@ -26,8 +26,7 @@ app.use(morgan('tiny'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
-app.use('/docs', swaggerUi.serve);
-app.get('/docs',swaggerUi.setup(openApiSpecification));
+
 
 
 //Routes
@@ -35,6 +34,10 @@ app.use('/users',router);
 
 //Midleware para manejar errores 500
 app.use(errorHandler);
+
+//Ruta documentacion
+app.use('/docs',swaggerUi.serve);
+app.get('/docs', swaggerUi.setup(openApiSpecification));
 
 app.listen(port, (error)=> {
   if (error) {
