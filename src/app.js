@@ -5,7 +5,8 @@ import  { mongo_uri } from './config/index.js';
 import morgan from 'morgan';
 import  router  from './routes/index.js';
 import bodyParser from 'body-parser';
-import errorHandler from './Middleware/errorHandlerPOST.js'
+import errorHandler from './Middleware/errorHandlerPOST.js';
+import {openApiSpecification} from './config/swagger.js';
 
 
 //Conexion Mongoose
@@ -25,7 +26,8 @@ app.use(morgan('tiny'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
-
+app.use('/docs', swaggerUi.serve);
+app.get('/docs',swaggerUi.setup(openApiSpecification));
 
 
 //Routes
