@@ -6,7 +6,9 @@ import morgan from 'morgan';
 import  router  from './routes/index.js';
 import bodyParser from 'body-parser';
 import errorHandler from './Middleware/errorHandlerPOST.js';
-import {openApiSpecification} from './config/swagger.js';
+import swaggerUi from 'swagger-ui-express';
+import { openApiSpecification } from './config/swagger.js';
+
 
 
 //Conexion Mongoose
