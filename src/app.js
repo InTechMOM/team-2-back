@@ -8,6 +8,7 @@ import bodyParser from 'body-parser';
 import errorHandler from './Middleware/errorHandlerPOST.js';
 import swaggerUi from 'swagger-ui-express';
 import { openApiSpecification } from './config/swagger.js';
+import cors from 'cors';
 
 
 
@@ -24,6 +25,7 @@ database.once('connected',()=>{
 })
 
 const app = express();
+app.use(cors());
 app.use(morgan('tiny'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
