@@ -3,10 +3,11 @@ import Video from '../Models/videoProject.js';
 
 const getVideoProjects=async(request, response,next)=>{
   try {
-    const {teachEmail,studentName}=request.query;
+    const {teachEmail,studentName,studentEmail}=request.query;
     const filter={
       ...teachEmail && {teachEmail},
-      ...studentName && {studentName}
+      ...studentName && {studentName},
+      ...studentEmail && {studentEmail}
     };
 
   
