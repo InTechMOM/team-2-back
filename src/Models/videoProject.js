@@ -10,6 +10,25 @@ const videoSchema=new Schema({
   projectName: {type: String, required:true},
   description: {type: String, required:true},
   creationDate:{type: Date, default: Date.now},
+  assessments: [
+    {
+      skill: {
+        type: String,
+        required: true,
+      },
+      timestamp: {
+        type: String,
+        required: true,
+      },
+      score: {
+        type: Number,
+        required: true,
+      },
+      comment: {
+        type: String,
+      },
+    },
+  ],
 
 }); 
 
