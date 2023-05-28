@@ -49,6 +49,8 @@ import User from '../Models/User.js';
  *       creationDate:
  *         type: string
  *         format: date-time
+ *       
+ *         
  *     example:
  *        _id: 645a9716d6743f7de79003b9
  *        name: "name1"
