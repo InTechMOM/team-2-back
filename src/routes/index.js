@@ -14,8 +14,8 @@ router.get('/check-email', getUserByEmail);
 router.post('/', validateUser, createUser);
 
 //Rutas Video
-router.post('/project',validateVideo,createVideo);
+router.post('/createVideo',validateVideo,createVideo);
 router.get('/findProject',getVideoProjects);
-router.put('/project/:id/assessment',videoPutAssesment);
+router.put('/:id/assessment',videoPutAssesment);
 
 export default router;

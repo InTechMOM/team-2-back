@@ -35,6 +35,7 @@ app.use(express.json());
 
 //Routes
 app.use('/users',router);
+app.use('/project',router);
 
 
 //Midleware para manejar errores 500

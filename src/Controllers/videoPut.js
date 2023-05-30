@@ -4,10 +4,10 @@ import Video from '../Models/videoProject.js';
 
 /**
  * @openapi
- * /users/project/{id}/assessment:
+ * /project/{id}/assessment:
  *   put:
  *     tags:
- *       - /users
+ *       - /project
  *     summary: Add evaluation to a video
  *     parameters:
  *       - name: id
@@ -16,17 +16,22 @@ import Video from '../Models/videoProject.js';
  *         schema:
  *           type: string
  *         description: ID of video
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/AssessmentInput'
+ *       - in: body
+ *         name: assessments
+ *         required: true
+ *         schema:
+ *           type: object
+ *           properties:
+ *             assessments:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Assessment'
+ *         description: The assessments to add to the video
  *          
  *               
  *     responses:
  *       200:
- *         description: OK
+ *         description: Assessments updated successfully
  *       404:
  *         description: Video not found
  *       500:
@@ -34,30 +39,19 @@ import Video from '../Models/videoProject.js';
  * 
  * components:
  *   schemas:
- *     AssessmentInput:
+ *     Assessment:
  *       type: object
  *       properties:
- *         assessment:
- *           type: object
- *           properties:
- *             skill:
- *               type: string
- *               description: Assessed ability.
- *             timestamp:
- *               type: string
- *               format: time
- *               description: Timestamp of the assessment on the video.
- *             score:
- *               type: number
- *               description: Score of video  1-5.
- *             comment:
- *               type: string
- *               description: Comments of video .
+ *         skill:
+ *           type: string
+ *         timestamp:
+ *           type: string
+ *         score:
+ *           type: number
+ *         comment:
+ *           type: string
  *         
- *       required:
- *         - skill
- *         - timestamp
- *         - score
+ *     
  *       
  */
 

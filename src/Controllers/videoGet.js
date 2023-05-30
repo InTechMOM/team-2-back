@@ -2,10 +2,10 @@ import Video from '../Models/videoProject.js';
 
 /**
  * @openapi
- * /users/findProject:
+ * /project/findProject:
  *   get:
  *     tags:
- *       - /users
+ *       - /project
  *     summary: Find projects asign to teacher or student by email
  *     description: Returns all projects, or you can filter by teacher email, student name and email.
  *     parameters:

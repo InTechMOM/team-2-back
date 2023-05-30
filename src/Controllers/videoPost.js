@@ -2,12 +2,12 @@ import Video from '../Models/videoProject.js';
 
 /**
  * @openapi
- * /users/project:
+ * /project/createVideo:
  *   post:
  *     summary: Create new project
  *     description: Create new project video
  *     tags: 
- *       - /users
+ *       - /project
  *     requestBody:
  *       required: true
  *       content:

@@ -52,12 +52,12 @@ import User from '../Models/User.js';
  *       
  *         
  *     example:
- *        _id: 645a9716d6743f7de79003b9
- *        name: "name1"
- *        lastname": lastname1"
- *        email: "email1@gmail.com"
+ *        _id: 64766f0d4bc2991546b5bbb3
+ *        name: "Michael"
+ *        lastname": "Johnson"
+ *        email: "michael.johnson@gmail.com"
  *        rol: "teacher"
- *        creationDate: 2023-05-09T18:55:18.010+00:00
+ *        creationDate: 2023-05-30T21:47:57.518+00:00
  * 
  */
 
