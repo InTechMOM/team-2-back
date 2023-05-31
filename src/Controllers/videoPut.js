@@ -20,36 +20,48 @@ import Video from '../Models/videoProject.js';
  *         name: assessments
  *         required: true
  *         schema:
- *           type: object
- *           properties:
- *             assessments:
- *               type: array
- *               items:
- *                 $ref: '#/components/schemas/Assessment'
- *         description: The assessments to add to the video
- *          
- *               
+ *           $ref: '#/components/schemas/AssessmentsRequestBody'      
  *     responses:
  *       200:
- *         description: Assessments updated successfully
+ *        description: Assessments updated successfully
  *       404:
- *         description: Video not found
+ *        description: Video not found
  *       500:
- *         description: Internal Server Error
+ *        description: Internal Server Error
  * 
- * components:
- *   schemas:
- *     Assessment:
- *       type: object
- *       properties:
- *         skill:
- *           type: string
- *         timestamp:
- *           type: string
- *         score:
- *           type: number
- *         comment:
- *           type: string
+ *components:
+ *  schemas:
+ *      AssessmentsRequestBody:
+ *        type: object
+ *        properties:
+ *          assessments:
+ *            type: array
+ *            items:
+ *              $ref: '#/components/schemas/Assessment'
+ *        required:
+ *          - assessments
+ * 
+ *      Assessment:
+ *        type: object
+ *        properties:
+ *          skill:
+ *            type: string
+ *          timestamp:
+ *            type: string
+ *          score:
+ *            type: integer
+ *          comment:
+ *            type: string
+ *        required:
+ *          - skill
+ *          - timestamp
+ *          - score
+ *          - comment
+ * 
+ * 
+ * 
+ * 
+ *         
  *         
  *     
  *       
