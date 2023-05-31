@@ -7,6 +7,7 @@ import createVideo from '../Controllers/videoPost.js';
 import validateVideo from '../Middleware/validateVideoPost.js';
 import getVideoProjects from '../Controllers/videoGet.js';
 import videoPutAssesment from '../Controllers/videoPut.js';
+import validateAssessment from '../Middleware/validateVideoPut.js';
 
 //Rutas User
 router.get('/check-email', getUserByEmail);
@@ -16,6 +17,6 @@ router.post('/', validateUser, createUser);
 //Rutas Video
 router.post('/createVideo',validateVideo,createVideo);
 router.get('/findProject',getVideoProjects);
-router.put('/:id/assessment',videoPutAssesment);
+router.put('/:id/assessment',validateAssessment,videoPutAssesment);
 
 export default router;
