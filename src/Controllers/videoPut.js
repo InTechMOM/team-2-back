@@ -16,30 +16,33 @@ import Video from '../Models/videoProject.js';
  *         schema:
  *           type: string
  *         description: ID of video
- *       - in: body
- *         name: assessments
- *         required: true
- *         schema:
- *           $ref: '#/components/schemas/AssessmentsRequestBody'      
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/AssessmentRequest'
+ *     
+ *
  *     responses:
  *       200:
- *        description: Assessments updated successfully
+ *         description: Assessments updated successfully
  *       404:
- *        description: Video not found
+ *         description: Video not found
  *       500:
- *        description: Internal Server Error
- * 
- *components:
- *  schemas:
- *      AssessmentsRequestBody:
- *        type: object
- *        properties:
- *          assessments:
- *            type: array
- *            items:
- *              $ref: '#/components/schemas/Assessment'
- *        required:
- *          - assessments
+ *         description: Internal Server Error
+ *
+ * components:
+ *   schemas:
+ *      AssessmentRequest:
+ *         type: object
+ *         properties:
+ *           assessments:
+ *             type: array
+ *             items:
+ *               $ref: '#/components/schemas/Assessment'
+ *         required:
+ *            - assessments
  * 
  *      Assessment:
  *        type: object
@@ -49,22 +52,11 @@ import Video from '../Models/videoProject.js';
  *          timestamp:
  *            type: string
  *          score:
- *            type: integer
+ *            type: number
  *          comment:
  *            type: string
- *        required:
- *          - skill
- *          - timestamp
- *          - score
- *          - comment
- * 
- * 
- * 
- * 
- *         
- *         
- *     
  *       
+ * 
  */
 
 const videoPutAssesment=async(request,response,next)=>{
