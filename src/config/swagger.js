@@ -12,7 +12,10 @@ const swaggerOptions={
   },
   apis:['app.js',
   './src/Controllers/UserGet.js',
-  './src/Controllers/userPost.js'
+  './src/Controllers/userPost.js',
+  './src/Controllers/videoPost.js',
+  './src/Controllers/videoGet.js',
+  './src/Controllers/videoPut.js'
 ],
 }
 
